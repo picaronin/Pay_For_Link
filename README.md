@@ -15,7 +15,7 @@ Once accessed, points are deducted of user account and add points for 50% of the
 2. In the `ext` directory of your phpBB board, copy the `Picaron/PayForLink` folder. It must be so: `/ext/Picaron/PayForLink`
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Look for `Pay For Link` under the Disabled Extensions list, and click its `Enable` link.
-5. Configure by navigating in the ACP -> POSTING -> Post settings -> Extension: Pay For Link
+5. Configure by navigating in the ACP -> POSTING -> Post settings -> Extension: `Pay For Link`
 
 ## Uninstall
 1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
