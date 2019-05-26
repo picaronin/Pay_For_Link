@@ -1,5 +1,6 @@
 imports:
     - { resource: tables.yml }
+
 services:
     Picaron.PayForLink.listener:
         class: Picaron\PayForLink\event\listener
