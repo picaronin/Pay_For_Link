@@ -1,0 +1,53 @@
+<!-- INCLUDE ucp_header.html -->
+    <div class="panel">
+        <div class="inner">
+            <h2>{POINTS_TITLE}</h2>
+            <p>{L_POINTS_LINKS_DESCRIPTION}<p>
+            <table class="table1 responsive">
+                <thead>
+                    <tr>
+                        <th>{POINTS_COLUM1}</th>
+                        <th style="text-align: center;">{POINTS_COLUM2}</th>
+                        <th style="text-align: center;">{POINTS_COLUM3}</th>
+                        <th>{POINTS_COLUM4}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- IF TRUE_LINK -->                
+                        <!-- BEGIN logs -->
+                        <!-- IF logs.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+                            <td>{logs.OWNER}</td>
+                            <td style="text-align: center;">{logs.LINK}</td>
+                            <td style="text-align: center;">{logs.SUBJECT}</td>
+                            <td>{logs.COST}</td>
+                        </tr>
+                        <!-- END logs -->
+                    <!-- ELSE -->
+                        <tr>
+                            <td class="bg1" colspan="4" align="center"><span class="gen">{L_LOGS_REASON_NOLOGS}</span></td>
+                        </tr>
+                    <!-- ENDIF -->
+                    <!-- IF TRUE_LINK --> 
+                        <tr>
+                            <td class="bg3" colspan="3" align="right"><span class="gen">{POINTS_TOT} {ENLACES_X_PAGINA} {L_POINTS_LINK}:</span></td>
+                            <td class="bg3" align="left"><span class="gen">{TOTAL_POINTS} {L_POINTS_POINTS}</span></td>
+                        </tr>
+                    <!-- ENDIF -->
+                </tbody>
+            </table>
+            <!-- IF TRUE_LINK --> 
+                <form action="{S_LOGS_ACTION}" method="post">
+                    <fieldset class="display-options">
+                        <label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+                        <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+                    </fieldset>
+                </form>
+
+                <div class="pagination">
+                    {L_POINTS_PAY_TOTAL}: {TOTAL_POSTS} {L_POINTS_LINK}
+                    <!-- INCLUDE pagination.html -->
+                </div>
+            <!-- ENDIF -->
+        </div>
+    </div>
+<!-- INCLUDE ucp_footer.html -->

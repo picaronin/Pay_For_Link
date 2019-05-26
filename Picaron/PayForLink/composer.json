@@ -1,0 +1,32 @@
+{
+	"name": "Picaron/PayForLink",
+	"type": "phpbb-extension",
+	"description": "This extension is a complement by the EXTENSION Ultimate Points by dmzx & posey with which we have the ability to create external links, accessible only if the points balance of the user is positive. Once accessed, points are deducted of user account and add points for 50% of the cost to the creator of the link.",
+	"homepage": "https://www.phpbb.com/community/viewtopic.php?f=456&t=2435356",
+	"version": "1.0.1",
+	"time": "2018-04-14",
+	"keywords": ["phpbb", "extension", "Ultimate Points", "Ultimate", "Points"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Picaron",
+			"homepage": "https://github.com/picaronin",
+			"role": "Extension Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": ">=3.2.0"
+	},
+	"extra": {
+		"display-name": "Pay For Link",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.0"
+		},
+		"version-check": {
+			"host": "www.siteproall.com",
+			"directory": "/PayForLink",
+			"filename": "payforlink_version"
+		}
+	}
+}

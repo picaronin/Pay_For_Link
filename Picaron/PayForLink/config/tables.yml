@@ -1,0 +1,2 @@
+parameters:
+    Picaron.PayForLink.table.payforlink: %core.table_prefix%payforlink

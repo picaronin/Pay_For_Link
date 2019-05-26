@@ -1,0 +1,64 @@
+imports:
+    - { resource: tables.yml }
+services:
+    Picaron.PayForLink.listener:
+        class: Picaron\PayForLink\event\listener
+        arguments:
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'            
+            - '@template'            
+        tags:
+            - { name: event.listener }
+
+    Picaron.PayForLink.controller:
+        class: Picaron\PayForLink\controller\main
+        arguments:
+            - '@Picaron.PayForLink.core.payforlink.preview.boton'
+            - '@Picaron.PayForLink.core.payforlink.download.boton'
+            - '@Picaron.PayForLink.core.payforlink.input.link'
+            - '@Picaron.PayForLink.core.payforlink.make.link'
+            - '@user'
+            - '@request'
+
+    Picaron.PayForLink.core.payforlink.preview.boton:
+        class: Picaron\PayForLink\core\payforlink_preview_boton
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '%core.root_path%'
+            - '%Picaron.PayForLink.table.payforlink%'
+
+    Picaron.PayForLink.core.payforlink.download.boton:
+        class: Picaron\PayForLink\core\payforlink_download_boton
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '%Picaron.PayForLink.table.payforlink%'
+
+    Picaron.PayForLink.core.payforlink.input.link:
+        class: Picaron\PayForLink\core\payforlink_input_link
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
+            - '%core.root_path%'
+
+    Picaron.PayForLink.core.payforlink.make.link:
+        class: Picaron\PayForLink\core\payforlink_make_link
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@request'
+            - '%core.root_path%'

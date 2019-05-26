@@ -1,0 +1,40 @@
+<div class="inner">
+
+    <p><h3>{L_LINK_ADD_TITLE}</h3></p>
+    
+    <fieldset class="fields2">
+
+        <dl>
+            <dt><label for="payforlinklink">{L_LINK_ADD_TITLE_BOX1}</label></dt>
+            <dd><input type="url" name="payforlinklink" id="payforlinklink" class="inputbox"></dd>
+        </dl>
+        <dl>
+            <dt><label for="payforlinkpoints">{L_LINK_ADD_TITLE_BOX2}</label></dt>
+            <dd><input type="number" min="1" max="150" name="payforlinkpoints" id="payforlinkpoints" value="40" class="inputbox autowidth"></dd>
+            <dd>{L_LINK_ADD_BOX2_EXPLAIN}</dd>
+        </dl>
+
+        <!-- IF ACCESO -->
+        <dl>
+            <dt><label for="payforlinkpropiet">{L_LINK_ADD_TITLE_BOX4}</label></dt>
+            <dd><input type="text" name="payforlinkpropiet" id="payforlinkpropiet" maxlength="255" value="{DATOS}" class="inputbox" style="max-width: 40%;"></dd>
+        </dl>
+        <dl>
+            <dt><label for="payforlinkpropietb"></label></dt>
+            <dd><input type="button" id="payforlinkpropietb" value="{L_FIND_USERNAME}" class="button2" onclick="find_username('{U_FIND_USERNAME}'); this.blur(); return false;"></dd>
+        </dl>
+        <!-- ENDIF -->
+
+    </fieldset>
+    <fieldset class="submit-buttons">
+        <!-- IF ACCESO -->
+        <input type="button" value="{L_LINK_ADD_BUTTON}" class="button1" onclick="Reload_Body('{U_MAKE}&payforlinklink='+encodeURIComponent(document.getElementById('payforlinklink').value)+'&payforlinkpoints='+document.getElementById('payforlinkpoints').value+'&payforlinkpropiet='+document.getElementById('payforlinkpropiet').value,'payforlinkcontent');">
+        <!-- ELSE -->
+        <input type="button" value="{L_LINK_ADD_BUTTON}" class="button1" onclick="Reload_Body('{U_MAKE}&payforlinklink='+encodeURIComponent(document.getElementById('payforlinklink').value)+'&payforlinkpoints='+document.getElementById('payforlinkpoints').value,'payforlinkcontent');">        
+        <!-- ENDIF -->
+        <hr class="dashed">
+    </fieldset>
+
+    <p>{L_LINK_ADD_EXPLAIN}</p>
+
+</div>
