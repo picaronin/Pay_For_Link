@@ -5,8 +5,7 @@ This extension is a complement by the EXTENSION [Ultimate Points by dmzx &amp; p
 
 Once accessed, points are deducted of user account and add points for 50% of the cost to the creator of the link.
 
-# Requirements:
-
-    phpBB >=3.2.0
-    PHP >=5.3.3
-    Ultimate Points Extension >=1.1.8 (Need/Recommended) Download from HERE
+## Requirements:
+* phpBB >=3.2.0
+* PHP >=5.3.3
+* [Ultimate Points Extension](http://www.dmzx-web.net/viewtopic.php?f=66&t=2415) >=1.1.8 (Need/Recommended)
