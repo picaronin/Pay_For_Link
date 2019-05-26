@@ -8,7 +8,7 @@ Once accessed, points are deducted of user account and add points for 50% of the
 ## Requirements:
 * phpBB >= 3.2.0
 * PHP >= 5.3.3
-* [Ultimate Points Extension](http://www.dmzx-web.net/viewtopic.php?f=66&t=2415) >=1.1.8 (Need/Recommended)
+* [Ultimate Points Extension](http://www.dmzx-web.net/viewtopic.php?f=66&t=2415) >= 1.1.8 (Need/Recommended)
 
 ## Install
 1. Download the latest release.
