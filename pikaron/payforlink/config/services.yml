@@ -1,0 +1,67 @@
+imports:
+    - { resource: tables.yml }
+services:
+    pikaron.payforlink.listener:
+        class: pikaron\payforlink\event\listener
+        arguments:
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@template'
+        tags:
+            - { name: event.listener }
+
+    pikaron.payforlink.controller:
+        class: pikaron\payforlink\controller\main
+        arguments:
+            - '@pikaron.payforlink.core.payforlink.preview.boton'
+            - '@pikaron.payforlink.core.payforlink.download.boton'
+            - '@pikaron.payforlink.core.payforlink.input.link'
+            - '@pikaron.payforlink.core.payforlink.make.link'
+            - '@user'
+            - '@request'
+
+    pikaron.payforlink.core.payforlink.preview.boton:
+        class: pikaron\payforlink\core\payforlink_preview_boton
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '%core.root_path%'
+            - '%pikaron.payforlink.table.payforlink%'
+
+    pikaron.payforlink.core.payforlink.download.boton:
+        class: pikaron\payforlink\core\payforlink_download_boton
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@dbal.tools'
+            - '@config'
+            - '%pikaron.payforlink.table.payforlink%'
+
+    pikaron.payforlink.core.payforlink.input.link:
+        class: pikaron\payforlink\core\payforlink_input_link
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
+            - '%core.root_path%'
+
+    pikaron.payforlink.core.payforlink.make.link:
+        class: pikaron\payforlink\core\payforlink_make_link
+        arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@request'
+            - '%core.root_path%'
+
+    _defaults:
+        public: true

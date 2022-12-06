@@ -1,0 +1,2 @@
+parameters:
+    pikaron.payforlink.table.payforlink: '%core.table_prefix%payforlink'

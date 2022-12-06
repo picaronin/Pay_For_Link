@@ -1,3 +1,0 @@
-Picaron_PayForLink_controller:
-    path: /payforlink
-    defaults: { _controller: Picaron.PayForLink.controller:handle_payforlink }
